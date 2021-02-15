@@ -17,20 +17,20 @@ Proyek ini berkenaan dengan Skripsi. Sebuah proyek tentang machine learning pada
 | Framework | Tensorflow.Keras |
 | Web Server | Hosting/Local |
 
-## Demo BOT
+## Demo
 
 <br>
 <p align="center">
-        <img src="/images/demo1.png" width="960" height="300">
+        <img src="/images/demo1.png" width="1280" height="730">
 </p>
 
 <br>
 <p align="center">
-        <img src="/images/demo2.png" width="960%" height="300">
+        <img src="/images/demo2.png" width="1280" height="720">
 </p>
 
 
-## Cara Menjalankan
+## Cara Menjalankan - How to Run
 1. ```pip install -r requirements.txt```
 2. ```flask run```
 3. Enjoy!
