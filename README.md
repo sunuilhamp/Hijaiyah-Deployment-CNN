@@ -21,12 +21,12 @@ Proyek ini berkenaan dengan Skripsi. Sebuah proyek tentang machine learning pada
 
 <br>
 <p align="center">
-        <img src="/images/demo1.png" width="1280" height="730">
+        <img src="/images/demo1.png" width="1280" height="500">
 </p>
 
 <br>
 <p align="center">
-        <img src="/images/demo2.png" width="1280" height="720">
+        <img src="/images/demo2.png" width="1280" height="500">
 </p>
 
 
