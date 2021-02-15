@@ -4,27 +4,19 @@ from flask import Flask, render_template, request
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 # tensorflow.keras library untuk menggunakan pretrained model
 from tensorflow.keras.models import load_model
-from tensorflow.keras.models import model_from_json
 # untuk perhitungan komputasi
 import numpy as np
 # untuk regex pada string
 import re
-# operasi sistem seperti load files
-import sys
 # pengaturan direktori
 import os
 
 # direktori model berada
-sys.path.append(os.path.abspath("./models"))
-
-from load import *
+loaded_model = load_model("models/hijaiyah.h5")
+print('Model ready!!')
 
 # inisialisasi flask
 app = Flask(__name__)
-
-global graph
-# inisialisasi graph
-graph = init()
 
 import base64
 
@@ -65,23 +57,13 @@ def predict():
     # membaca gambar
     img = load_image('output.png')
 
-    with graph.as_default():
-        json_file = open('models/model.json','r')
-        loaded_model_json = json_file.read()
-        json_file.close()
-        loaded_model = model_from_json(loaded_model_json)
-        # load model
-        loaded_model.load_weights("models/model.h5")
-        print("Loaded Model from disk")
-        # kompilasi model yang diload
-        loaded_model.compile(loss='sparse_categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
-        # melakukan prediksi
-        out = loaded_model.predict(img)
-        print(out)
-        print(class_names[np.argmax(out)])
-        # konversi respon menjadi string
-        response = class_names[np.argmax(out)]
-        return str(response)
+    # melakukan prediksi
+    pred = loaded_model.predict(img)
+    print(pred)
+    print(class_names[np.argmax(pred)])
+    # konversi respon menjadi string
+    response = class_names[np.argmax(pred)]
+    return str(response)
 
 
 if __name__ == "__main__":
