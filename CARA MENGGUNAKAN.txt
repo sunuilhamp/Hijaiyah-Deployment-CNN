@@ -1,0 +1,6 @@
+1. Install Python 3.7
+2. Install semua library yang dibutuhkan dengan mengcopy script berikut "pip install -r requirements.txt" dan tekan enter.
+3. Tunggu hingga selesai.
+4. Jalankan "flask run".
+5. Buka browser dan buka alamat "localhost:5000"
+6. Selamat belajar dan mencoba!
