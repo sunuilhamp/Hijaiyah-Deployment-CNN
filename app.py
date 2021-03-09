@@ -10,6 +10,16 @@ import numpy as np
 import re
 # pengaturan direktori
 import os
+# tanggalan
+from datetime import date
+
+today = date.today()
+
+# dd/mm/YY
+datefull = today.strftime("%d/%m/%Y")
+datefull = str(datefull)
+date_processed = datefull.split('/')
+cur_year = date_processed[2]
 
 # direktori model berada
 loaded_model = load_model("models/hijaiyah.h5")
@@ -40,7 +50,7 @@ def load_image(img_path):
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", year=cur_year)
 
 
 @app.route('/predict/', methods=['GET', 'POST'])
